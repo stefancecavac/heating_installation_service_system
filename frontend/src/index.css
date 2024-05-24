@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      @apply font-Roboto;
+    }
+  }
+
+  @layer components {
+    .link-primary {
+      @apply text-xl text-textcollor hover:text-Primary transition-all ease-in-out;
+    }
+  }
+
+  @layer components {
+    .Button-primary {
+      @apply bg-gradient-to-r from-Primary to-red-500 border-2 text-xl border-Primary text-white rounded-xl p-3 hover:to-white hover:from-white hover:text-Primary transition-all ease-in-out;
+  
+    }
+  }
+
+  @layer components {
+    .Input-primary {
+      @apply rounded-lg p-1  border-2 border-gray-300 focus:outline-orange-300 ;
+  
+    }
+  }
