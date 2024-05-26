@@ -37,58 +37,61 @@ const Register = () => {
         }
     }
     return (
-        <div className='shadow-lg rounded-lg w-8/12 flex m-auto my-20 '>
-            <form onSubmit={handleSubmit(onSubmit)} className='p-10 flex flex-col  w-3/6 '>
-                <p className='text-textcollor text-4xl mb-10'>Register</p>
+        <div className='dark:bg-neutral-900'>
+            <div className='shadow-lg rounded-lg w-8/12 flex m-auto my-20 dark:bg-neutral-800 '>
+                <form onSubmit={handleSubmit(onSubmit)} className='p-10 flex flex-col  w-3/6 '>
+                    <p className='text-textcollor dark:text-white text-4xl mb-10'>Register</p>
 
-                <label className='flex flex-col text-textcollor '> Name:
-                    <input {...register('user_name', {
-                        required: "Name field is required"
-                    })} className='Input-primary'></input>
-                </label>
-                {errors.user_name && <div className='text-red-500'>{errors.user_name.message}</div>}
+                    <label className='flex flex-col text-textcollor dark:text-white '> Name:
+                        <input {...register('user_name', {
+                            required: "Name field is required"
+                        })} className='Input-primary'></input>
+                    </label>
+                    {errors.user_name && <div className='text-red-500'>{errors.user_name.message}</div>}
 
-                <label className='flex flex-col text-textcollor mt-5 '> Lastname:
-                    <input {...register('user_lastName', {
-                        required: "LastName field is required"
-                    })} className='Input-primary'></input>
-                </label>
-                {errors.user_lastName && <div className='text-red-500'>{errors.user_lastName.message}</div>}
+                    <label className='flex flex-col text-textcollor dark:text-white mt-5 '> Lastname:
+                        <input {...register('user_lastName', {
+                            required: "LastName field is required"
+                        })} className='Input-primary'></input>
+                    </label>
+                    {errors.user_lastName && <div className='text-red-500'>{errors.user_lastName.message}</div>}
 
-                <label className='flex flex-col text-textcollor mt-5 '> Email:
-                    <input {...register('user_email', {
-                        required: "Email field is required"
-                    })} className='Input-primary'></input>
-                </label>
-                {errors.user_email && <div className='text-red-500'>{errors.user_email.message}</div>}
+                    <label className='flex flex-col text-textcollor dark:text-white mt-5 '> Email:
+                        <input {...register('user_email', {
+                            required: "Email field is required"
+                        })} className='Input-primary'></input>
+                    </label>
+                    {errors.user_email && <div className='text-red-500'>{errors.user_email.message}</div>}
 
-                <label className='flex flex-col text-textcollor mt-5 '> Password:
-                    <input type='password' {...register('user_password', {
-                        required: 'Password field is required',
-                        minLength: {
-                            value: 8,
-                            message: 'Password must be at least 8 characters long'
-                        },
-                        pattern: {
-                            value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"':;?/>.<,]).{8,}$/,
-                            message: 'Password must include at least one uppercase letter, one lowercase letter, one number, and one special character'
-                        }
-                    })} className='Input-primary'></input>
-                </label>
-                {errors.user_password && <div className='text-red-500'>{errors.user_password.message}</div>}
-
-
-
-
-                <button className='Button-primary w-3/6 flex m-auto justify-center my-5'>Register</button>
-                <p className='text-textcollor flex justify-center '>Already have an account? <Link to='/user/login' className='text-Primary'>login</Link></p>
+                    <label className='flex flex-col text-textcollor dark:text-whitemt-5 dark:text-white '> Password:
+                        <input type='password' {...register('user_password', {
+                            required: 'Password field is required',
+                            minLength: {
+                                value: 8,
+                                message: 'Password must be at least 8 characters long'
+                            },
+                            pattern: {
+                                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"':;?/>.<,]).{8,}$/,
+                                message: 'Password must include at least one uppercase letter, one lowercase letter, one number, and one special character'
+                            }
+                        })} className='Input-primary'></input>
+                    </label>
+                    {errors.user_password && <div className='text-red-500'>{errors.user_password.message}</div>}
 
 
-            </form>
-            <div className='bg-gradient-to-r from-Primary to-red-500 w-3/6 rounded-r-lg flex items-center justify-center'>
-                <p className='text-white text-center text-6xl font-bold'>Join our Family!</p>
+
+
+                    <button className='Button-primary w-3/6 flex m-auto justify-center my-5'>Register</button>
+                    <p className='text-textcollor flex justify-center dark:text-white '>Already have an account? <Link to='/user/login' className='text-Primary'>login</Link></p>
+
+
+                </form>
+                <div className='bg-gradient-to-r from-Primary to-red-500 w-3/6 rounded-r-lg flex items-center justify-center'>
+                    <p className='text-white text-center text-6xl font-bold'>Join our Family!</p>
+                </div>
             </div>
         </div>
+
     )
 }
 

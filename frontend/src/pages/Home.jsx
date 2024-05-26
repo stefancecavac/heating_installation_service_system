@@ -8,7 +8,7 @@ const Home = () => {
 
 
     return(
-        <div className="flex-1 flex flex-col p-10 gap-10 dark:bg-neutral-800">
+        <div className="flex-1 flex flex-col p-10 gap-10 dark:bg-neutral-900">
             <Hero></Hero>
 
             <ServiceInfo></ServiceInfo>

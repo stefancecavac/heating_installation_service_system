@@ -12,6 +12,9 @@ import Login from './pages/login'
 import Redirect from './layouts/redirect'
 import ServiceInstallation from './pages/serviceInstallation'
 import AuthRedirect from './layouts/authRedirect'
+import './i18n';
+
+
 
 const router = createBrowserRouter([
   {
@@ -54,8 +57,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <UserContextProvider>
-      <RouterProvider router={router} />
-    </UserContextProvider>
+      <UserContextProvider>
+        <RouterProvider router={router} />
+      </UserContextProvider>
   </React.StrictMode>,
 )
