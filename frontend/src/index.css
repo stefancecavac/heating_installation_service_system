@@ -14,13 +14,13 @@
 
   @layer components {
     .link-primary {
-      @apply text-xl text-textcollor hover:text-Primary transition-all ease-in-out;
+      @apply text-xl text-textcollor dark:text-white dark:hover:text-Primary  hover:text-Primary transition-all ease-in-out;
     }
   }
 
   @layer components {
     .Button-primary {
-      @apply bg-gradient-to-r from-Primary to-red-500 border-2 text-xl border-Primary text-white rounded-xl p-3 hover:to-white hover:from-white hover:text-Primary transition-all ease-in-out;
+      @apply bg-gradient-to-r from-Primary to-red-500 border-2  border-Primary dark:hover:to-neutral-800 dark:hover:from-neutral-800 text-white rounded-xl p-3 hover:to-white hover:from-white hover:text-Primary transition-all ease-in-out;
   
     }
   }
@@ -30,4 +30,51 @@
       @apply rounded-lg p-1  border-2 border-gray-300 focus:outline-orange-300 ;
   
     }
+  }
+
+
+
+  @keyframes animModal {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+      transform: scale(0);
+    }
+  
+    45% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    70% {
+      animation-timing-function: ease-in;
+      transform: scale(0.84);
+    }
+  
+    100% {
+      animation-timing-function: ease-out;
+      transform: scale(1);
+    }
+  
+    
+  }
+
+  .animate-modal {
+    animation: animModal 300ms ease-in-out 0s 1 normal forwards;
+  }
+
+
+  @keyframes animModalBack {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+     opacity : 100;
+    }
+  }
+
+  .animate-modal-background {
+    animation: animModalBack 200ms ease-in-out 0s 1 normal forwards;
   }

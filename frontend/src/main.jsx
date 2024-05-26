@@ -9,6 +9,9 @@ import Register from './pages/Register'
 import { UserContextProvider } from './context/userContext'
 import NotFoundPage from './pages/NotFoundPage'
 import Login from './pages/login'
+import Redirect from './layouts/redirect'
+import ServiceInstallation from './pages/serviceInstallation'
+import AuthRedirect from './layouts/authRedirect'
 
 const router = createBrowserRouter([
   {
@@ -17,11 +20,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home /> 
+        element: <Home />
       },
       {
         path: '/services',
-        element: <ServicePage /> 
+        element: <ServicePage />,
+      },
+      {
+        path: '/services/installation',
+        element: <AuthRedirect><ServiceInstallation></ServiceInstallation></AuthRedirect>
       }
     ],
   },
@@ -31,24 +38,24 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'register',
-        element: <Register />
+        element: <Redirect><Register /></Redirect>
       },
       {
         path: 'login',
-        element: <Login />
+        element: <Redirect><Login /></Redirect>
       }
     ]
   },
   {
-    path: '*', 
-    element: <NotFoundPage /> 
+    path: '*',
+    element: <NotFoundPage />
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <UserContextProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </UserContextProvider>
   </React.StrictMode>,
 )

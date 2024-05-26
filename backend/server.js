@@ -22,7 +22,7 @@ import installationRouter from './routes/installationRouter.js'
 import userRouter from './routes/userRouter.js'
 
 
-app.use('/api/service' , installationRouter)
+app.use('/api/service/installation' , installationRouter)
 app.use('/api/user' , userRouter)
 
 
